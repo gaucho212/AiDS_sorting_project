@@ -161,18 +161,22 @@ def insertion_sort(data):
 def sort_using_algorithm(data, algorithm):
     # This function takes the algorithm identifier as input
     # However, it always uses the sorted function in Python
-
+    start_time=time.time()
     match algorithm:
-        case 1: return insertion_sort(data)                  # Insertion Sort
-        case 2: return shell_sort_sedgewick(data)    # Shell Sort
-        case 3: return selection_sort(data)          # Selection Sort
-        case 4: return heap_sort(data)               # Heap Sort
-        case 5: return quick_sort_left_pivot(data)   # Quick Sort (lewy pivot)
-        case 6: return quick_sort_random_pivot(data) # Quick Sort (losowy pivot)
+        case 1: sorted_data= insertion_sort(data)                  # Insertion Sort
+        case 2: sorted_data= shell_sort_sedgewick(data)    # Shell Sort
+        case 3: sorted_data= selection_sort(data)          # Selection Sort
+        case 4: sorted_data= heap_sort(data)               # Heap Sort
+        case 5: sorted_data= quick_sort_left_pivot(data)   # Quick Sort (lewy pivot)
+        case 6: sorted_data= quick_sort_random_pivot(data) # Quick Sort (losowy pivot)
         case _: 
             print(f"Unknown algorithm: {algorithm}. Using default.")
-            return sorted(data)
-    
+            sorted_data= sorted(data)
+        
+    end_time=time.time()
+    execution_time=end_time-start_time
+    print(f"Czas działania algorytmu: {execution_time:.10f}")
+    return sorted_data    
     
 
 def main():
@@ -192,7 +196,7 @@ def main():
     sorted_data = sort_using_algorithm(data, algorithm_number)
 
     # Print the sorted data
-    print("Sorted data:", sorted_data[0:10])
+    print("Sorted data:", sorted_data[0:])
 
 if __name__ == "__main__":
     main()
