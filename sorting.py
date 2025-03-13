@@ -1,6 +1,6 @@
 import sys
 import random
-import time
+
 def quick_sort_random_pivot(data):
     arr = data.copy()
     def partition(low, high):
@@ -161,7 +161,6 @@ def insertion_sort(data):
 def sort_using_algorithm(data, algorithm):
     # This function takes the algorithm identifier as input
     # However, it always uses the sorted function in Python
-    start_time=time.time()
     match algorithm:
         case 1: sorted_data= insertion_sort(data)                  # Insertion Sort
         case 2: sorted_data= shell_sort_sedgewick(data)    # Shell Sort
@@ -173,9 +172,7 @@ def sort_using_algorithm(data, algorithm):
             print(f"Unknown algorithm: {algorithm}. Using default.")
             sorted_data= sorted(data)
         
-    end_time=time.time()
-    execution_time=end_time-start_time
-    print(f"Czas działania algorytmu: {execution_time:.10f}")
+    
     return sorted_data    
     
 
