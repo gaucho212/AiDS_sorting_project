@@ -2,9 +2,7 @@ import time
 import random
 import sorting  
 
-# Function to generate random lists for benchmarking
-def generate_random_list(size):
-    return [random.randint(0, 10000) for _ in range(size)]
+
 
 # List of sorting algorithms to test
 sorting_algorithms = [
@@ -17,7 +15,7 @@ sorting_algorithms = [
 ]
 
 # List of sizes for the random lists
-list_sizes = [100, 1000, 5000, 10000]
+list_sizes = [2**x for x in range(2, 20)]
 
 # Dictionary to store the results
 benchmark_results = {}
@@ -27,9 +25,10 @@ for algorithm in sorting_algorithms:
     algorithm_name = algorithm.__name__
     benchmark_results[algorithm_name] = {}
     for size in list_sizes:
-        random_list = generate_random_list(size)
+        f=open(f'benchmark/a_shaped_array_{size:08d}.txt','r')
+        testing_list = [int(x) for x in f.read().split()]
         start_time = time.time()
-        algorithm(random_list.copy())  # Use a copy to avoid in-place sorting issues
+        algorithm(testing_list.copy())  # Use a copy to avoid in-place sorting issues
         end_time = time.time()
         duration = end_time - start_time
         benchmark_results[algorithm_name][size] = duration
