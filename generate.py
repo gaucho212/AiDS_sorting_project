@@ -24,7 +24,6 @@ def generate_a_shaped_array(size):
     increasing_part = np.arange(half_size)
     decreasing_part = np.arange(half_size, 0, -1)
     return np.concatenate((increasing_part, decreasing_part))
-#chuj ci w pysk
 # Set the sizes for the arrays
 sizes = [2**x for x in range(2, 20)]
 
