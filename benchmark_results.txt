@@ -1,0 +1,264 @@
+shell_sort_sedgewick:
+  a_shaped_array:
+    List size 32: 0.000021 seconds
+    List size 64: 0.000017 seconds
+    List size 128: 0.000035 seconds
+    List size 256: 0.000064 seconds
+    List size 512: 0.000158 seconds
+    List size 1024: 0.000404 seconds
+    List size 2048: 0.000866 seconds
+    List size 4096: 0.001977 seconds
+    List size 8192: 0.004425 seconds
+    List size 16384: 0.009076 seconds
+    List size 32768: 0.018750 seconds
+
+  constant_array:
+    List size 32: 0.000011 seconds
+    List size 64: 0.000012 seconds
+    List size 128: 0.000018 seconds
+    List size 256: 0.000034 seconds
+    List size 512: 0.000081 seconds
+    List size 1024: 0.000174 seconds
+    List size 2048: 0.000402 seconds
+    List size 4096: 0.000866 seconds
+    List size 8192: 0.002143 seconds
+    List size 16384: 0.004039 seconds
+    List size 32768: 0.008999 seconds
+
+  decreasing_array:
+    List size 32: 0.000012 seconds
+    List size 64: 0.000019 seconds
+    List size 128: 0.000033 seconds
+    List size 256: 0.000062 seconds
+    List size 512: 0.000201 seconds
+    List size 1024: 0.000728 seconds
+    List size 2048: 0.000905 seconds
+    List size 4096: 0.002395 seconds
+    List size 8192: 0.004683 seconds
+    List size 16384: 0.009738 seconds
+    List size 32768: 0.021739 seconds
+
+  increasing_array:
+    List size 32: 0.000012 seconds
+    List size 64: 0.000014 seconds
+    List size 128: 0.000023 seconds
+    List size 256: 0.000040 seconds
+    List size 512: 0.000103 seconds
+    List size 1024: 0.000231 seconds
+    List size 2048: 0.000527 seconds
+    List size 4096: 0.001133 seconds
+    List size 8192: 0.002513 seconds
+    List size 16384: 0.005327 seconds
+    List size 32768: 0.011528 seconds
+
+  random_array:
+    List size 32: 0.000033 seconds
+    List size 64: 0.000026 seconds
+    List size 128: 0.000048 seconds
+    List size 256: 0.000112 seconds
+    List size 512: 0.000326 seconds
+    List size 1024: 0.000752 seconds
+    List size 2048: 0.001883 seconds
+    List size 4096: 0.004176 seconds
+    List size 8192: 0.009345 seconds
+    List size 16384: 0.020009 seconds
+    List size 32768: 0.044321 seconds
+
+heap_sort:
+  a_shaped_array:
+    List size 32: 0.000026 seconds
+    List size 64: 0.000036 seconds
+    List size 128: 0.000079 seconds
+    List size 256: 0.000188 seconds
+    List size 512: 0.000435 seconds
+    List size 1024: 0.001093 seconds
+    List size 2048: 0.002320 seconds
+    List size 4096: 0.005112 seconds
+    List size 8192: 0.011611 seconds
+    List size 16384: 0.024467 seconds
+    List size 32768: 0.052139 seconds
+
+  constant_array:
+    List size 32: 0.000012 seconds
+    List size 64: 0.000012 seconds
+    List size 128: 0.000020 seconds
+    List size 256: 0.000036 seconds
+    List size 512: 0.000072 seconds
+    List size 1024: 0.000144 seconds
+    List size 2048: 0.000287 seconds
+    List size 4096: 0.000574 seconds
+    List size 8192: 0.001198 seconds
+    List size 16384: 0.002362 seconds
+    List size 32768: 0.004641 seconds
+
+  decreasing_array:
+    List size 32: 0.000018 seconds
+    List size 64: 0.000036 seconds
+    List size 128: 0.000075 seconds
+    List size 256: 0.000167 seconds
+    List size 512: 0.000403 seconds
+    List size 1024: 0.000926 seconds
+    List size 2048: 0.002086 seconds
+    List size 4096: 0.004855 seconds
+    List size 8192: 0.010712 seconds
+    List size 16384: 0.023327 seconds
+    List size 32768: 0.050997 seconds
+
+  increasing_array:
+    List size 32: 0.000022 seconds
+    List size 64: 0.000040 seconds
+    List size 128: 0.000115 seconds
+    List size 256: 0.000198 seconds
+    List size 512: 0.000469 seconds
+    List size 1024: 0.001019 seconds
+    List size 2048: 0.002442 seconds
+    List size 4096: 0.005424 seconds
+    List size 8192: 0.011893 seconds
+    List size 16384: 0.025702 seconds
+    List size 32768: 0.054550 seconds
+
+  random_array:
+    List size 32: 0.000022 seconds
+    List size 64: 0.000041 seconds
+    List size 128: 0.000087 seconds
+    List size 256: 0.000219 seconds
+    List size 512: 0.000449 seconds
+    List size 1024: 0.001021 seconds
+    List size 2048: 0.002417 seconds
+    List size 4096: 0.005236 seconds
+    List size 8192: 0.011788 seconds
+    List size 16384: 0.025780 seconds
+    List size 32768: 0.056016 seconds
+
+insertion_sort:
+  a_shaped_array:
+    List size 32: 0.000017 seconds
+    List size 64: 0.000033 seconds
+    List size 128: 0.000114 seconds
+    List size 256: 0.000434 seconds
+    List size 512: 0.002079 seconds
+    List size 1024: 0.009587 seconds
+    List size 2048: 0.038167 seconds
+    List size 4096: 0.154794 seconds
+    List size 8192: 0.627831 seconds
+    List size 16384: 2.440339 seconds
+    List size 32768: 9.836378 seconds
+
+  constant_array:
+    List size 32: 0.000005 seconds
+    List size 64: 0.000006 seconds
+    List size 128: 0.000010 seconds
+    List size 256: 0.000017 seconds
+    List size 512: 0.000038 seconds
+    List size 1024: 0.000083 seconds
+    List size 2048: 0.000158 seconds
+    List size 4096: 0.000329 seconds
+    List size 8192: 0.000646 seconds
+    List size 16384: 0.001287 seconds
+    List size 32768: 0.003314 seconds
+
+  decreasing_array:
+    List size 32: 0.000018 seconds
+    List size 64: 0.000056 seconds
+    List size 128: 0.000209 seconds
+    List size 256: 0.000821 seconds
+    List size 512: 0.003911 seconds
+    List size 1024: 0.017485 seconds
+    List size 2048: 0.070581 seconds
+    List size 4096: 0.292347 seconds
+    List size 8192: 1.186483 seconds
+    List size 16384: 4.811296 seconds
+    List size 32768: 18.550730 seconds
+
+  increasing_array:
+    List size 32: 0.000007 seconds
+    List size 64: 0.000008 seconds
+    List size 128: 0.000011 seconds
+    List size 256: 0.000018 seconds
+    List size 512: 0.000042 seconds
+    List size 1024: 0.000092 seconds
+    List size 2048: 0.000199 seconds
+    List size 4096: 0.000355 seconds
+    List size 8192: 0.000706 seconds
+    List size 16384: 0.001498 seconds
+    List size 32768: 0.002928 seconds
+
+  random_array:
+    List size 32: 0.000012 seconds
+    List size 64: 0.000034 seconds
+    List size 128: 0.000125 seconds
+    List size 256: 0.000446 seconds
+    List size 512: 0.002255 seconds
+    List size 1024: 0.009234 seconds
+    List size 2048: 0.038609 seconds
+    List size 4096: 0.156654 seconds
+    List size 8192: 0.614651 seconds
+    List size 16384: 2.553072 seconds
+    List size 32768: 10.544040 seconds
+
+selection_sort:
+  a_shaped_array:
+    List size 32: 0.000019 seconds
+    List size 64: 0.000039 seconds
+    List size 128: 0.000132 seconds
+    List size 256: 0.000484 seconds
+    List size 512: 0.002367 seconds
+    List size 1024: 0.009863 seconds
+    List size 2048: 0.037944 seconds
+    List size 4096: 0.155032 seconds
+    List size 8192: 0.610807 seconds
+    List size 16384: 1.566254 seconds
+    List size 32768: 9.895245 seconds
+
+  constant_array:
+    List size 32: 0.000014 seconds
+    List size 64: 0.000037 seconds
+    List size 128: 0.000128 seconds
+    List size 256: 0.000487 seconds
+    List size 512: 0.002293 seconds
+    List size 1024: 0.009393 seconds
+    List size 2048: 0.036263 seconds
+    List size 4096: 0.144195 seconds
+    List size 8192: 0.594912 seconds
+    List size 16384: 2.421172 seconds
+    List size 32768: 9.369553 seconds
+
+  decreasing_array:
+    List size 32: 0.000015 seconds
+    List size 64: 0.000038 seconds
+    List size 128: 0.000127 seconds
+    List size 256: 0.000481 seconds
+    List size 512: 0.002461 seconds
+    List size 1024: 0.010267 seconds
+    List size 2048: 0.039797 seconds
+    List size 4096: 0.161689 seconds
+    List size 8192: 0.642491 seconds
+    List size 16384: 2.576884 seconds
+    List size 32768: 9.945988 seconds
+
+  increasing_array:
+    List size 32: 0.000013 seconds
+    List size 64: 0.000037 seconds
+    List size 128: 0.000128 seconds
+    List size 256: 0.000562 seconds
+    List size 512: 0.002312 seconds
+    List size 1024: 0.009753 seconds
+    List size 2048: 0.037323 seconds
+    List size 4096: 0.148988 seconds
+    List size 8192: 0.597836 seconds
+    List size 16384: 2.407374 seconds
+    List size 32768: 9.625041 seconds
+
+  random_array:
+    List size 32: 0.000016 seconds
+    List size 64: 0.000054 seconds
+    List size 128: 0.000143 seconds
+    List size 256: 0.000502 seconds
+    List size 512: 0.002441 seconds
+    List size 1024: 0.009872 seconds
+    List size 2048: 0.037648 seconds
+    List size 4096: 0.150372 seconds
+    List size 8192: 0.606049 seconds
+    List size 16384: 2.456141 seconds
+    List size 32768: 10.134388 seconds
+

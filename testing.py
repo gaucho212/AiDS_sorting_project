@@ -4,15 +4,15 @@ import sorting
 # List of sorting algorithms to test
 sorting_algorithms = [
     sorting.shell_sort_sedgewick,
-    sorting.quick_sort_left_pivot,
-    sorting.quick_sort_random_pivot,
+    #sorting.quick_sort_left_pivot,
+    #sorting.quick_sort_random_pivot,
     sorting.heap_sort,
     sorting.insertion_sort,
     sorting.selection_sort,
 ]
 
-# List of sizes for the random lists
-list_sizes = [2**x for x in range(2, 20)]
+# List of sizes for the lists
+list_sizes = [2**x for x in range(5, 16)]
 
 # List of categories for different list shapes
 categories = [
@@ -44,7 +44,7 @@ for algorithm in sorting_algorithms:
             benchmark_results[algorithm_name][category][size] = duration
 
 # Save the results to a file
-with open("benchmark_results.txt", "w") as file:
+with open(f'benchmark_results.txt', "w") as file:
     for algorithm_name, categories in benchmark_results.items():
         file.write(f"{algorithm_name}:\n")
         for category, results in categories.items():
@@ -52,3 +52,4 @@ with open("benchmark_results.txt", "w") as file:
             for size, duration in results.items():
                 file.write(f"    List size {size}: {duration:.6f} seconds\n")
             file.write("\n")
+
