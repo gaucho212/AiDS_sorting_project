@@ -1,6 +1,7 @@
 import time
 import sorting
 import sys
+import os
 
 sys.setrecursionlimit(10**7)
 
@@ -28,6 +29,9 @@ categories = [
 
 # Słownik do przechowywania wyników
 benchmark_results = {}
+# Folder na wyniki do wykresów
+output_folder = "wyniki do wykresów"
+os.makedirs(output_folder, exist_ok=True)
 
 # Testowanie algorytmów
 for algorithm in sorting_algorithms:
@@ -50,7 +54,8 @@ for algorithm in sorting_algorithms:
 # Zapisujemy wyniki do pliku
 for algorithm_name, category_results in benchmark_results.items():
     for category, results in category_results.items():
-        with open(f"{algorithm_name}_{category}.txt", "w") as file:
+        with open(os.path.join(output_folder, f"{algorithm_name}_{category}.txt"), "w") as file:
+            file.write("Algorithm,InputSize,Time\n")
             for size, duration in results.items():
                 file.write(f"{category},{size},{duration:.6f}\n")
             file.write("\n")
