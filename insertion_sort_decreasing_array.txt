@@ -1,0 +1,12 @@
+decreasing_array,32,0.000033
+decreasing_array,64,0.000122
+decreasing_array,128,0.000564
+decreasing_array,256,0.001811
+decreasing_array,512,0.007682
+decreasing_array,1024,0.038014
+decreasing_array,2048,0.151637
+decreasing_array,4096,0.601849
+decreasing_array,8192,2.605329
+decreasing_array,16384,10.443273
+decreasing_array,32768,44.067245
+

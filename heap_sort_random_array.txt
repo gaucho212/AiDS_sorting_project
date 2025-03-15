@@ -1,0 +1,12 @@
+random_array,32,0.000035
+random_array,64,0.000067
+random_array,128,0.000145
+random_array,256,0.000340
+random_array,512,0.000809
+random_array,1024,0.001821
+random_array,2048,0.005979
+random_array,4096,0.010184
+random_array,8192,0.025180
+random_array,16384,0.054303
+random_array,32768,0.109723
+

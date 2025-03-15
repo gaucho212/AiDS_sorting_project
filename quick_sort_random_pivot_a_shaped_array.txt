@@ -1,0 +1,12 @@
+a_shaped_array,32,0.000053
+a_shaped_array,64,0.000080
+a_shaped_array,128,0.000109
+a_shaped_array,256,0.000335
+a_shaped_array,512,0.000574
+a_shaped_array,1024,0.001478
+a_shaped_array,2048,0.004870
+a_shaped_array,4096,0.006126
+a_shaped_array,8192,0.015363
+a_shaped_array,16384,0.036521
+a_shaped_array,32768,0.063662
+

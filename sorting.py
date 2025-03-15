@@ -142,8 +142,8 @@ def insertion_sort(data):
 
 
 def sort_using_algorithm(data, algorithm):
-    # This function takes the algorithm identifier as input
-    # However, it always uses the sorted function in Python
+    # Ta funkcja sortuje dane za pomocą wybranego algorytmu.
+    # Jeśli algorytm jest nieznany, używa domyślnego sortowania Pythona.
     start_time = time.time()
     match algorithm:
         case 1:
@@ -175,17 +175,17 @@ def main():
     )
     algorithm_number = int(input("Podaj numer sortowania: "))
 
-    # Read input data from standard input until the end of file (EOF)
+    # Wczytuje dane wejściowe
     input_data = sys.stdin.read().split()
     try:
         data = [int(x) for x in input_data[:]]
     except EOFError:
         print("Error reading input.")
 
-    # Perform sorting using the specified algorithm (ignored in this example)
+    # Uruchamia algorytmu sortowania
     sorted_data = sort_using_algorithm(data, algorithm_number)
 
-    # Print the sorted data
+    # Wypisuje posortowane dane
     print("Sorted data:", sorted_data[0:])
 
 

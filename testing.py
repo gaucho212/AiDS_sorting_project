@@ -4,7 +4,7 @@ import sys
 
 sys.setrecursionlimit(10**7)
 
-# List of sorting algorithms to test
+# Lista algorytmów sortujących
 sorting_algorithms = [
     sorting.shell_sort_sedgewick,
     # sorting.quick_sort_left_pivot,
@@ -14,10 +14,10 @@ sorting_algorithms = [
     sorting.selection_sort,
 ]
 
-# List of sizes for the lists
+# Lista rozmiarów list do testowania
 list_sizes = [2**x for x in range(5, 16)]
 
-# List of categories for different list shapes
+# Lista kategorii list do testowania
 categories = [
     "a_shaped_array",
     "constant_array",
@@ -26,10 +26,10 @@ categories = [
     "random_array",
 ]
 
-# Dictionary to store the results
+# Słownik do przechowywania wyników
 benchmark_results = {}
 
-# Benchmarking loop
+# Testowanie algorytmów
 for algorithm in sorting_algorithms:
     algorithm_name = algorithm.__name__
     benchmark_results[algorithm_name] = {}
@@ -41,13 +41,13 @@ for algorithm in sorting_algorithms:
             start_time = time.time()
             algorithm(
                 testing_list.copy()
-            )  # Use a copy to avoid in-place sorting issues
+            )  # Używamy metody copy() aby nie nadpisywać oryginalnej listy
             end_time = time.time()
             print(f"{algorithm_name} {category} {size} {end_time - start_time   }")
             duration = end_time - start_time
             benchmark_results[algorithm_name][category][size] = duration
 
-# Save the results to a file
+# Zapisujemy wyniki do pliku
 with open(f"benchmark_results.txt", "w") as file:
     for algorithm_name, categories in benchmark_results.items():
         file.write(f"{algorithm_name}:\n")
