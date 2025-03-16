@@ -1,4 +1,4 @@
-\label{wykresy}
+
 \documentclass{article}
 %Tworzenie wykresów bezpośrednio w LaTeXu
 \usepackage{pgfplots}
@@ -7,38 +7,389 @@
 %Ustawianie marginesu 1 cal lub 0.5 cala to najlepsza opcja. Standardowe 1.5 cala nadaje się dla książek ale dla sprawozdań już mniej
 \usepackage[margin=1in]{geometry}
 \pgfplotsset{
-	width=6cm, height=3cm, ymin=0, xmin=2047, xmax=32768, grid=both, %wymiary osi
+	width=8cm, height=7cm, ymin=0, xmin=2047, xmax=32768, grid=both, %wymiary osi
 	xticklabel style={rotate=45, anchor=near xticklabel},  %liczby na osi X pod kątem 45*
-	x label style={at={(axis description cs:0.5,-0.5)}}, %legenda osi X wyśrodkowana, lekko obniżona
+	x label style={at={(axis description cs:0.5,-0.03)}}, %legenda osi X wyśrodkowana, lekko obniżona
+	y label style={at={(axis description cs:-0.1,0.4)}}
 }
 \begin{document}
-	zawartość...%Wykresy, obrazy itd, warto opakowywać w `figure`, dzięki czemu można dodać Caption\Opis do figury, jak i `label` dzięki któremu później można odwoływać się do figur np. ``
+	\section*{WYKRESY DLA DANYCH TYPU A SHAPED ARRAY }
+	%Wykresy, obrazy itd, warto opakowywać w `figure`, dzięki czemu można dodać Caption\Opis do figury, jak i `label` dzięki któremu później można odwoływać się do figur np. ``
 	\begin{figure}[H]
 		\centering
-		
+		\label{fig:enter-label}
 		%Tworzę "pojemnik" na wykres `pgfplots` tak żeby automatycznie wyskalował mi wygenerowany wykres na szerokość strony. 
 		\noindent\resizebox{\textwidth}{!}{
 			\begin{tikzpicture}
 				\begin{axis}[%
 					name=plotA, anchor=left of south west,
-					width=6cm, height=3cm,%Nadpisuję rozmiar wykresu
-					xlabel={ Rozmiar instancji}, ylabel={Czas (s)},
-					%tick label style={font=\small}, % Zmniejszenie napisów na osiach
-					%legend style={font=\small} ,legend pos=north west,% Zmniejszen 
-					title={Złożoność Obliczeniowa Algorytmy Szybkie (plotA)}, 
-					
+					title={Heap Sort A Shaped Array}, 
+					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					legend pos=north west,
 					xmode = log, log basis x={2},
 					every axis plot post/.style={red!75!black, very thick},
 					/tikz/plot label/.style={black, anchor=west}
 					]
 					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {heap_sort_a_shaped_array.txt};
-					\addplot[red, dotted, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {heap_sort_constant_array.txt};
-					\legend{Heap Sort, Quick Sort}
 				\end{axis}
-				
+				\begin{axis}[%
+					title={Insertion Sort A Shaped Array}, 
+					name=plotB, at=(plotA.right of south east), 
+					anchor=left of south west,
+					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					legend pos=north west,
+					xmode = log, log basis x={2}, %Ustawiam oś x na logarytmiczną (log2)
+					every axis plot post/.style={red!75!black, very thick},
+					/tikz/plot label/.style={black, anchor=west}
+					]
+					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {insertion_sort_a_shaped_array.txt};
+				\end{axis}
+				\begin{axis}[%
+					title={Quick Sort A Shaped Array}, 
+					name=plotD, at=(plotB.below south west), 
+					anchor=above north west,
+					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					legend pos=north west,
+					xmode = log, log basis x={2},
+					every axis plot post/.style={red!75!black, very thick},
+					/tikz/plot label/.style={black, anchor=west}
+					]
+					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {quick_sort_left_pivot_a_shaped_array.txt};
+					\addplot[red, dotted, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {quick_sort_random_pivot_a_shaped_array.txt};
+					\legend{Left Pivot, Random Pivot}
+				\end{axis}
+				\begin{axis}[%
+					title={Selection Sort A Shaped Array},
+					name=plotC, at=(plotD.left of south west), 
+					anchor=right of south east,
+					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					legend pos=north west,
+					xmode = log, log basis x={2},
+					every axis plot post/.style={red!75!black, very thick},
+					/tikz/plot label/.style={black, anchor=west}
+					]
+					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {selection_sort_a_shaped_array.txt};
+				\end{axis}
+				\begin{axis}[
+					title={Shell Sort Sedgewick A Shaped Array},
+					title style={yshift=5pt},
+					name=plotE, at=(plotD.below south west),
+					%yshift=-0.8cm,
+					xshift=2.1cm,
+					anchor=above north east,
+					%	yticklabel style={xshift=-1cm},
+					xlabel={Rozmiar instancji}, ylabel={Czas(ms)},
+					xmode = log, log basis x={2},
+					every axis plot post/.style={red!75!black, very thick},
+					/tikz/plot label/.style={black, anchor=north}
+					]
+					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {shell_sort_sedgewick_a_shaped_array.txt};
+				\end{axis}
 			\end{tikzpicture}
 		}
-		\caption{Caption}
+	\end{figure}
+	\newpage
+	\section*{WYKRESY DLA DANYCH TYPU CONSTANT ARRAY }
+	%Wykresy, obrazy itd, warto opakowywać w `figure`, dzięki czemu można dodać Caption\Opis do figury, jak i `label` dzięki któremu później można odwoływać się do figur np. ``
+	\begin{figure}[H]
+		\centering
 		\label{fig:enter-label}
+		%Tworzę "pojemnik" na wykres `pgfplots` tak żeby automatycznie wyskalował mi wygenerowany wykres na szerokość strony. 
+		\noindent\resizebox{\textwidth}{!}{
+			\begin{tikzpicture}
+				\begin{axis}[%
+					name=plotA, anchor=left of south west,
+					title={Heap Sort Constant Array}, 
+					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					legend pos=north west,
+					xmode = log, log basis x={2},
+					every axis plot post/.style={red!75!black, very thick},
+					/tikz/plot label/.style={black, anchor=west}
+					]
+					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {heap_sort_constant_array.txt};
+				\end{axis}
+				\begin{axis}[%
+					title={Insertion Sort Constant Array}, 
+					name=plotB, at=(plotA.right of south east), 
+					anchor=left of south west,
+					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					legend pos=north west,
+					xmode = log, log basis x={2}, %Ustawiam oś x na logarytmiczną (log2)
+					every axis plot post/.style={red!75!black, very thick},
+					/tikz/plot label/.style={black, anchor=west}
+					]
+					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {insertion_sort_constant_array.txt};
+				\end{axis}
+				\begin{axis}[%
+					title={Quick Sort Constant Array}, 
+					name=plotD, at=(plotB.below south west), 
+					anchor=above north west,
+					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					legend pos=north west,
+					xmode = log, log basis x={2},
+					every axis plot post/.style={red!75!black, very thick},
+					/tikz/plot label/.style={black, anchor=west}
+					]
+					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {quick_sort_left_pivot_constant_array.txt};
+					\addplot[red, dotted, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {quick_sort_random_pivot_constant_array.txt};
+					\legend{Left Pivot, Random Pivot}
+				\end{axis}
+				\begin{axis}[%
+					title={Selection Sort Constant Array},
+					name=plotC, at=(plotD.left of south west), 
+					anchor=right of south east,
+					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					legend pos=north west,
+					xmode = log, log basis x={2},
+					every axis plot post/.style={red!75!black, very thick},
+					/tikz/plot label/.style={black, anchor=west}
+					]
+					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {selection_sort_constant_array.txt};
+				\end{axis}
+				\begin{axis}[
+					title={Shell Sort Sedgewick Constant Array},
+					title style={yshift=5pt},
+					name=plotE, at=(plotD.below south west),
+					%yshift=-0.8cm,
+					xshift=2.1cm,
+					anchor=above north east,
+					%	yticklabel style={xshift=-1cm},
+					xlabel={Rozmiar instancji}, ylabel={Czas(ms)},
+					xmode = log, log basis x={2},
+					every axis plot post/.style={red!75!black, very thick},
+					/tikz/plot label/.style={black, anchor=north}
+					]
+					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {shell_sort_sedgewick_constant_array.txt};
+				\end{axis}
+			\end{tikzpicture}
+		}
+	\end{figure}
+	\newpage
+	\section*{WYKRESY DLA DANYCH TYPU DECREASING ARRAY }
+	%Wykresy, obrazy itd, warto opakowywać w `figure`, dzięki czemu można dodać Caption\Opis do figury, jak i `label` dzięki któremu później można odwoływać się do figur np. ``
+	\begin{figure}[H]
+		\centering
+		\label{fig:enter-label}
+		%Tworzę "pojemnik" na wykres `pgfplots` tak żeby automatycznie wyskalował mi wygenerowany wykres na szerokość strony. 
+		\noindent\resizebox{\textwidth}{!}{
+			\begin{tikzpicture}
+				\begin{axis}[%
+					name=plotA, anchor=left of south west,
+					title={Heap Sort Decreasing Array}, 
+					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					legend pos=north west,
+					xmode = log, log basis x={2},
+					every axis plot post/.style={red!75!black, very thick},
+					/tikz/plot label/.style={black, anchor=west}
+					]
+					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {heap_sort_decreasing_array.txt};
+				\end{axis}
+				\begin{axis}[%
+					title={Insertion Sort Decreasing Array}, 
+					name=plotB, at=(plotA.right of south east), 
+					anchor=left of south west,
+					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					legend pos=north west,
+					xmode = log, log basis x={2}, %Ustawiam oś x na logarytmiczną (log2)
+					every axis plot post/.style={red!75!black, very thick},
+					/tikz/plot label/.style={black, anchor=west}
+					]
+					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {insertion_sort_decreasing_array.txt};
+				\end{axis}
+				\begin{axis}[%
+					title={Quick Sort Decreasing Array}, 
+					name=plotD, at=(plotB.below south west), 
+					anchor=above north west,
+					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					legend pos=north west,
+					xmode = log, log basis x={2},
+					every axis plot post/.style={red!75!black, very thick},
+					/tikz/plot label/.style={black, anchor=west}
+					]
+					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {quick_sort_left_pivot_decreasing_array.txt};
+					\addplot[red, dotted, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {quick_sort_random_pivot_decreasing_array.txt};
+					\legend{Left Pivot, Random Pivot}
+				\end{axis}
+				\begin{axis}[%
+					title={Selection Sort Decreasing Array},
+					name=plotC, at=(plotD.left of south west), 
+					anchor=right of south east,
+					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					legend pos=north west,
+					xmode = log, log basis x={2},
+					every axis plot post/.style={red!75!black, very thick},
+					/tikz/plot label/.style={black, anchor=west}
+					]
+					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {selection_sort_decreasing_array.txt};
+				\end{axis}
+				\begin{axis}[
+					title={Shell Sort Sedgewick Decreasing Array},
+					title style={yshift=5pt},
+					name=plotE, at=(plotD.below south west),
+					%yshift=-0.8cm,
+					xshift=2.1cm,
+					anchor=above north east,
+					%	yticklabel style={xshift=-1cm},
+					xlabel={Rozmiar instancji}, ylabel={Czas(ms)},
+					xmode = log, log basis x={2},
+					every axis plot post/.style={red!75!black, very thick},
+					/tikz/plot label/.style={black, anchor=north}
+					]
+					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {shell_sort_sedgewick_decreasing_array.txt};
+				\end{axis}
+			\end{tikzpicture}
+		}
+	\end{figure}
+	\newpage
+	\section*{WYKRESY DLA DANYCH TYPU INCREASING ARRAY }
+	%Wykresy, obrazy itd, warto opakowywać w `figure`, dzięki czemu można dodać Caption\Opis do figury, jak i `label` dzięki któremu później można odwoływać się do figur np. ``
+	\begin{figure}[H]
+		\centering
+		\label{fig:enter-label}
+		%Tworzę "pojemnik" na wykres `pgfplots` tak żeby automatycznie wyskalował mi wygenerowany wykres na szerokość strony. 
+		\noindent\resizebox{\textwidth}{!}{
+			\begin{tikzpicture}
+				\begin{axis}[%
+					name=plotA, anchor=left of south west,
+					title={Heap Sort Increasing Array}, 
+					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					legend pos=north west,
+					xmode = log, log basis x={2},
+					every axis plot post/.style={red!75!black, very thick},
+					/tikz/plot label/.style={black, anchor=west}
+					]
+					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {heap_sort_increasing_array.txt};
+				\end{axis}
+				\begin{axis}[%
+					title={Insertion Sort Increasing Array}, 
+					name=plotB, at=(plotA.right of south east), 
+					anchor=left of south west,
+					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					legend pos=north west,
+					xmode = log, log basis x={2}, %Ustawiam oś x na logarytmiczną (log2)
+					every axis plot post/.style={red!75!black, very thick},
+					/tikz/plot label/.style={black, anchor=west}
+					]
+					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {insertion_sort_increasing_array.txt};
+				\end{axis}
+				\begin{axis}[%
+					title={Quick Sort Increasing Array}, 
+					name=plotD, at=(plotB.below south west), 
+					anchor=above north west,
+					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					legend pos=north west,
+					xmode = log, log basis x={2},
+					every axis plot post/.style={red!75!black, very thick},
+					/tikz/plot label/.style={black, anchor=west}
+					]
+					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {quick_sort_left_pivot_increasing_array.txt};
+					\addplot[red, dotted, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {quick_sort_random_pivot_increasing_array.txt};
+					\legend{Left Pivot, Random Pivot}
+				\end{axis}
+				\begin{axis}[%
+					title={Selection Sort Increasing Array},
+					name=plotC, at=(plotD.left of south west), 
+					anchor=right of south east,
+					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					legend pos=north west,
+					xmode = log, log basis x={2},
+					every axis plot post/.style={red!75!black, very thick},
+					/tikz/plot label/.style={black, anchor=west}
+					]
+					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {selection_sort_increasing_array.txt};
+				\end{axis}
+				\begin{axis}[
+					title={Shell Sort Sedgewick Increasing Array},
+					title style={yshift=5pt},
+					name=plotE, at=(plotD.below south west),
+					%yshift=-0.8cm,
+					xshift=2.1cm,
+					anchor=above north east,
+					%	yticklabel style={xshift=-1cm},
+					xlabel={Rozmiar instancji}, ylabel={Czas(ms)},
+					xmode = log, log basis x={2},
+					every axis plot post/.style={red!75!black, very thick},
+					/tikz/plot label/.style={black, anchor=north}
+					]
+					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {shell_sort_sedgewick_increasing_array.txt};
+				\end{axis}
+			\end{tikzpicture}
+		}
+	\end{figure}
+	\newpage
+	\section*{WYKRESY DLA DANYCH TYPU RANDOM ARRAY }
+	%Wykresy, obrazy itd, warto opakowywać w `figure`, dzięki czemu można dodać Caption\Opis do figury, jak i `label` dzięki któremu później można odwoływać się do figur np. ``
+	\begin{figure}[H]
+		\centering
+		\label{fig:enter-label}
+		%Tworzę "pojemnik" na wykres `pgfplots` tak żeby automatycznie wyskalował mi wygenerowany wykres na szerokość strony. 
+		\noindent\resizebox{\textwidth}{!}{
+			\begin{tikzpicture}
+				\begin{axis}[%
+					name=plotA, anchor=left of south west,
+					title={Heap Sort Random Array}, 
+					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					legend pos=north west,
+					xmode = log, log basis x={2},
+					every axis plot post/.style={red!75!black, very thick},
+					/tikz/plot label/.style={black, anchor=west}
+					]
+					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {heap_sort_decreasing_array.txt};
+				\end{axis}
+				\begin{axis}[%
+					title={Insertion Sort Random Array}, 
+					name=plotB, at=(plotA.right of south east), 
+					anchor=left of south west,
+					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					legend pos=north west,
+					xmode = log, log basis x={2}, %Ustawiam oś x na logarytmiczną (log2)
+					every axis plot post/.style={red!75!black, very thick},
+					/tikz/plot label/.style={black, anchor=west}
+					]
+					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {insertion_sort_random_array.txt};
+				\end{axis}
+				\begin{axis}[%
+					title={Quick Sort Random Array}, 
+					name=plotD, at=(plotB.below south west), 
+					anchor=above north west,
+					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					legend pos=north west,
+					xmode = log, log basis x={2},
+					every axis plot post/.style={red!75!black, very thick},
+					/tikz/plot label/.style={black, anchor=west}
+					]
+					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {quick_sort_left_pivot_random_array.txt};
+					\addplot[red, dotted, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {quick_sort_random_pivot_random_array.txt};
+					\legend{Left Pivot, Random Pivot}
+				\end{axis}
+				\begin{axis}[%
+					title={Selection Sort Random Array},
+					name=plotC, at=(plotD.left of south west), 
+					anchor=right of south east,
+					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					legend pos=north west,
+					xmode = log, log basis x={2},
+					every axis plot post/.style={red!75!black, very thick},
+					/tikz/plot label/.style={black, anchor=west}
+					]
+					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {selection_sort_random_array.txt};
+				\end{axis}
+				\begin{axis}[
+					title={Shell Sort Sedgewick Random Array},
+					title style={yshift=5pt},
+					name=plotE, at=(plotD.below south west),
+					%yshift=-0.8cm,
+					xshift=2.1cm,
+					anchor=above north east,
+					%	yticklabel style={xshift=-1cm},
+					xlabel={Rozmiar instancji}, ylabel={Czas(ms)},
+					xmode = log, log basis x={2},
+					every axis plot post/.style={red!75!black, very thick},
+					/tikz/plot label/.style={black, anchor=north}
+					]
+					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {shell_sort_sedgewick_random_array.txt};
+				\end{axis}
+			\end{tikzpicture}
+		}
 	\end{figure}
 \end{document}
