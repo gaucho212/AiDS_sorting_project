@@ -2,7 +2,6 @@
 \documentclass{article}
 %Tworzenie wykresów bezpośrednio w LaTeXu
 \usepackage{pgfplots}
-\pgfplotsset{compat=1.18}
 %Pozwala dodać opcję H dlo figur, dzięki czemu mamy absolutną kontrolę gdzie się mają pojawić
 \usepackage{float}
 %Ustawianie marginesu 1 cal lub 0.5 cala to najlepsza opcja. Standardowe 1.5 cala nadaje się dla książek ale dla sprawozdań już mniej
@@ -33,7 +32,7 @@
 					/tikz/plot label/.style={black, anchor=west}
 					]
 					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {heap_sort_a_shaped_array.txt};
-					\addplot[red, dotted, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {shell_sort_sedgewick_increasing_array.csv};
+					\addplot[red, dotted, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {heap_sort_constant_array.txt};
 					\legend{Heap Sort, Quick Sort}
 				\end{axis}
 				
