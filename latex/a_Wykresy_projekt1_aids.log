@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.15)  16 MAR 2025 15:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.15)  17 MAR 2025 14:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -512,6 +512,9 @@ LaTeX Warning: Label `fig:enter-label' multiply defined.
 
 LaTeX Warning: Label `fig:enter-label' multiply defined.
 
+
+LaTeX Warning: Label `fig:enter-label' multiply defined.
+
 )
 \openout1 = `a_Wykresy_projekt1_aids.aux'.
 
@@ -641,7 +644,40 @@ PGFPlots: reading {selection_sort_random_array.txt}
 PGFPlots: reading {shell_sort_sedgewick_random_array.txt}
 
 
-[5] (./a_Wykresy_projekt1_aids.aux)
+[5]
+PGFPlots: reading {heap_sort_a_shaped_array.txt}
+PGFPlots: reading {heap_sort_constant_array.txt}
+PGFPlots: reading {heap_sort_decreasing_array.txt}
+PGFPlots: reading {heap_sort_increasing_array.txt}
+PGFPlots: reading {heap_sort_random_array.txt}
+PGFPlots: reading {insertion_sort_a_shaped_array.txt}
+PGFPlots: reading {insertion_sort_constant_array.txt}
+PGFPlots: reading {insertion_sort_decreasing_array.txt}
+PGFPlots: reading {insertion_sort_increasing_array.txt}
+PGFPlots: reading {insertion_sort_random_array.txt}
+PGFPlots: reading {quick_sort_left_pivot_a_shaped_array.txt}
+PGFPlots: reading {quick_sort_left_pivot_constant_array.txt}
+PGFPlots: reading {quick_sort_left_pivot_decreasing_array.txt}
+PGFPlots: reading {quick_sort_left_pivot_increasing_array.txt}
+PGFPlots: reading {quick_sort_left_pivot_random_array.txt}
+PGFPlots: reading {quick_sort_random_pivot_a_shaped_array.txt}
+PGFPlots: reading {quick_sort_random_pivot_constant_array.txt}
+PGFPlots: reading {quick_sort_random_pivot_decreasing_array.txt}
+PGFPlots: reading {quick_sort_random_pivot_increasing_array.txt}
+PGFPlots: reading {quick_sort_random_pivot_random_array.txt}
+PGFPlots: reading {selection_sort_a_shaped_array.txt}
+PGFPlots: reading {selection_sort_constant_array.txt}
+PGFPlots: reading {selection_sort_decreasing_array.txt}
+PGFPlots: reading {selection_sort_increasing_array.txt}
+PGFPlots: reading {selection_sort_random_array.txt}
+PGFPlots: reading {shell_sort_sedgewick_a_shaped_array.txt}
+PGFPlots: reading {shell_sort_sedgewick_constant_array.txt}
+PGFPlots: reading {shell_sort_sedgewick_decreasing_array.txt}
+PGFPlots: reading {shell_sort_sedgewick_increasing_array.txt}
+PGFPlots: reading {shell_sort_sedgewick_random_array.txt}
+
+
+[6] (./a_Wykresy_projekt1_aids.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -652,10 +688,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 22900 strings out of 473190
- 611712 string characters out of 5715800
- 1142674 words of memory out of 5000000
- 45779 multiletter control sequences out of 15000+600000
+ 22953 strings out of 473190
+ 612650 string characters out of 5715800
+ 1201088 words of memory out of 5000000
+ 45830 multiletter control sequences out of 15000+600000
  559442 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,21n,105p,737b,2239s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -665,10 +701,10 @@ Here is how much of TeX's memory you used:
 usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr
 /local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
 local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on a_Wykresy_projekt1_aids.pdf (5 pages, 91047 bytes).
+Output written on a_Wykresy_projekt1_aids.pdf (6 pages, 101270 bytes).
 PDF statistics:
- 53 PDF objects out of 1000 (max. 8388607)
- 33 compressed objects within 1 object stream
+ 56 PDF objects out of 1000 (max. 8388607)
+ 35 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

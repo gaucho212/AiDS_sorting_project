@@ -24,7 +24,7 @@
 				\begin{axis}[%
 					name=plotA, anchor=left of south west,
 					title={Heap Sort A Shaped Array}, 
-					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					xlabel={Rozmiar instancji}, ylabel={Czas(s)}, 
 					legend pos=north west,
 					xmode = log, log basis x={2},
 					every axis plot post/.style={red!75!black, very thick},
@@ -36,7 +36,7 @@
 					title={Insertion Sort A Shaped Array}, 
 					name=plotB, at=(plotA.right of south east), 
 					anchor=left of south west,
-					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					xlabel={Rozmiar instancji}, ylabel={Czas(s)}, 
 					legend pos=north west,
 					xmode = log, log basis x={2}, %Ustawiam oś x na logarytmiczną (log2)
 					every axis plot post/.style={red!75!black, very thick},
@@ -48,7 +48,7 @@
 					title={Quick Sort A Shaped Array}, 
 					name=plotD, at=(plotB.below south west), 
 					anchor=above north west,
-					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					xlabel={Rozmiar instancji}, ylabel={Czas(s)}, 
 					legend pos=north west,
 					xmode = log, log basis x={2},
 					every axis plot post/.style={red!75!black, very thick},
@@ -62,7 +62,7 @@
 					title={Selection Sort A Shaped Array},
 					name=plotC, at=(plotD.left of south west), 
 					anchor=right of south east,
-					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					xlabel={Rozmiar instancji}, ylabel={Czas(s)}, 
 					legend pos=north west,
 					xmode = log, log basis x={2},
 					every axis plot post/.style={red!75!black, very thick},
@@ -78,7 +78,7 @@
 					xshift=2.1cm,
 					anchor=above north east,
 					%	yticklabel style={xshift=-1cm},
-					xlabel={Rozmiar instancji}, ylabel={Czas(ms)},
+					xlabel={Rozmiar instancji}, ylabel={Czas(s)},
 					xmode = log, log basis x={2},
 					every axis plot post/.style={red!75!black, very thick},
 					/tikz/plot label/.style={black, anchor=north}
@@ -100,7 +100,7 @@
 				\begin{axis}[%
 					name=plotA, anchor=left of south west,
 					title={Heap Sort Constant Array}, 
-					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					xlabel={Rozmiar instancji}, ylabel={Czas(s)}, 
 					legend pos=north west,
 					xmode = log, log basis x={2},
 					every axis plot post/.style={red!75!black, very thick},
@@ -112,7 +112,7 @@
 					title={Insertion Sort Constant Array}, 
 					name=plotB, at=(plotA.right of south east), 
 					anchor=left of south west,
-					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					xlabel={Rozmiar instancji}, ylabel={Czas(s)}, 
 					legend pos=north west,
 					xmode = log, log basis x={2}, %Ustawiam oś x na logarytmiczną (log2)
 					every axis plot post/.style={red!75!black, very thick},
@@ -124,7 +124,7 @@
 					title={Quick Sort Constant Array}, 
 					name=plotD, at=(plotB.below south west), 
 					anchor=above north west,
-					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					xlabel={Rozmiar instancji}, ylabel={Czas(s)}, 
 					legend pos=north west,
 					xmode = log, log basis x={2},
 					every axis plot post/.style={red!75!black, very thick},
@@ -138,7 +138,7 @@
 					title={Selection Sort Constant Array},
 					name=plotC, at=(plotD.left of south west), 
 					anchor=right of south east,
-					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					xlabel={Rozmiar instancji}, ylabel={Czas(s)}, 
 					legend pos=north west,
 					xmode = log, log basis x={2},
 					every axis plot post/.style={red!75!black, very thick},
@@ -154,7 +154,7 @@
 					xshift=2.1cm,
 					anchor=above north east,
 					%	yticklabel style={xshift=-1cm},
-					xlabel={Rozmiar instancji}, ylabel={Czas(ms)},
+					xlabel={Rozmiar instancji}, ylabel={Czas(s)},
 					xmode = log, log basis x={2},
 					every axis plot post/.style={red!75!black, very thick},
 					/tikz/plot label/.style={black, anchor=north}
@@ -176,7 +176,7 @@
 				\begin{axis}[%
 					name=plotA, anchor=left of south west,
 					title={Heap Sort Decreasing Array}, 
-					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					xlabel={Rozmiar instancji}, ylabel={Czas(s)}, 
 					legend pos=north west,
 					xmode = log, log basis x={2},
 					every axis plot post/.style={red!75!black, very thick},
@@ -188,7 +188,7 @@
 					title={Insertion Sort Decreasing Array}, 
 					name=plotB, at=(plotA.right of south east), 
 					anchor=left of south west,
-					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					xlabel={Rozmiar instancji}, ylabel={Czas(s)}, 
 					legend pos=north west,
 					xmode = log, log basis x={2}, %Ustawiam oś x na logarytmiczną (log2)
 					every axis plot post/.style={red!75!black, very thick},
@@ -200,7 +200,7 @@
 					title={Quick Sort Decreasing Array}, 
 					name=plotD, at=(plotB.below south west), 
 					anchor=above north west,
-					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					xlabel={Rozmiar instancji}, ylabel={Czas(s)}, 
 					legend pos=north west,
 					xmode = log, log basis x={2},
 					every axis plot post/.style={red!75!black, very thick},
@@ -214,7 +214,7 @@
 					title={Selection Sort Decreasing Array},
 					name=plotC, at=(plotD.left of south west), 
 					anchor=right of south east,
-					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					xlabel={Rozmiar instancji}, ylabel={Czas(s)}, 
 					legend pos=north west,
 					xmode = log, log basis x={2},
 					every axis plot post/.style={red!75!black, very thick},
@@ -230,7 +230,7 @@
 					xshift=2.1cm,
 					anchor=above north east,
 					%	yticklabel style={xshift=-1cm},
-					xlabel={Rozmiar instancji}, ylabel={Czas(ms)},
+					xlabel={Rozmiar instancji}, ylabel={Czas(s)},
 					xmode = log, log basis x={2},
 					every axis plot post/.style={red!75!black, very thick},
 					/tikz/plot label/.style={black, anchor=north}
@@ -252,7 +252,7 @@
 				\begin{axis}[%
 					name=plotA, anchor=left of south west,
 					title={Heap Sort Increasing Array}, 
-					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					xlabel={Rozmiar instancji}, ylabel={Czas(s)}, 
 					legend pos=north west,
 					xmode = log, log basis x={2},
 					every axis plot post/.style={red!75!black, very thick},
@@ -264,7 +264,7 @@
 					title={Insertion Sort Increasing Array}, 
 					name=plotB, at=(plotA.right of south east), 
 					anchor=left of south west,
-					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					xlabel={Rozmiar instancji}, ylabel={Czas(s)}, 
 					legend pos=north west,
 					xmode = log, log basis x={2}, %Ustawiam oś x na logarytmiczną (log2)
 					every axis plot post/.style={red!75!black, very thick},
@@ -276,7 +276,7 @@
 					title={Quick Sort Increasing Array}, 
 					name=plotD, at=(plotB.below south west), 
 					anchor=above north west,
-					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					xlabel={Rozmiar instancji}, ylabel={Czas(s)}, 
 					legend pos=north west,
 					xmode = log, log basis x={2},
 					every axis plot post/.style={red!75!black, very thick},
@@ -290,7 +290,7 @@
 					title={Selection Sort Increasing Array},
 					name=plotC, at=(plotD.left of south west), 
 					anchor=right of south east,
-					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					xlabel={Rozmiar instancji}, ylabel={Czas(s)}, 
 					legend pos=north west,
 					xmode = log, log basis x={2},
 					every axis plot post/.style={red!75!black, very thick},
@@ -306,7 +306,7 @@
 					xshift=2.1cm,
 					anchor=above north east,
 					%	yticklabel style={xshift=-1cm},
-					xlabel={Rozmiar instancji}, ylabel={Czas(ms)},
+					xlabel={Rozmiar instancji}, ylabel={Czas(s)},
 					xmode = log, log basis x={2},
 					every axis plot post/.style={red!75!black, very thick},
 					/tikz/plot label/.style={black, anchor=north}
@@ -328,7 +328,7 @@
 				\begin{axis}[%
 					name=plotA, anchor=left of south west,
 					title={Heap Sort Random Array}, 
-					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					xlabel={Rozmiar instancji}, ylabel={Czas(s)}, 
 					legend pos=north west,
 					xmode = log, log basis x={2},
 					every axis plot post/.style={red!75!black, very thick},
@@ -340,7 +340,7 @@
 					title={Insertion Sort Random Array}, 
 					name=plotB, at=(plotA.right of south east), 
 					anchor=left of south west,
-					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					xlabel={Rozmiar instancji}, ylabel={Czas(s)}, 
 					legend pos=north west,
 					xmode = log, log basis x={2}, %Ustawiam oś x na logarytmiczną (log2)
 					every axis plot post/.style={red!75!black, very thick},
@@ -352,7 +352,7 @@
 					title={Quick Sort Random Array}, 
 					name=plotD, at=(plotB.below south west), 
 					anchor=above north west,
-					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					xlabel={Rozmiar instancji}, ylabel={Czas(s)}, 
 					legend pos=north west,
 					xmode = log, log basis x={2},
 					every axis plot post/.style={red!75!black, very thick},
@@ -366,7 +366,7 @@
 					title={Selection Sort Random Array},
 					name=plotC, at=(plotD.left of south west), 
 					anchor=right of south east,
-					xlabel={Rozmiar instancji}, ylabel={Czas(ms)}, 
+					xlabel={Rozmiar instancji}, ylabel={Czas(s)}, 
 					legend pos=north west,
 					xmode = log, log basis x={2},
 					every axis plot post/.style={red!75!black, very thick},
@@ -382,12 +382,131 @@
 					xshift=2.1cm,
 					anchor=above north east,
 					%	yticklabel style={xshift=-1cm},
-					xlabel={Rozmiar instancji}, ylabel={Czas(ms)},
+					xlabel={Rozmiar instancji}, ylabel={Czas(s)},
 					xmode = log, log basis x={2},
 					every axis plot post/.style={red!75!black, very thick},
 					/tikz/plot label/.style={black, anchor=north}
 					]
 					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {shell_sort_sedgewick_random_array.txt};
+				\end{axis}
+			\end{tikzpicture}
+		}
+	\end{figure}
+	\newpage
+	\section*{WYKRESY ZBIORCZE }
+	%Wykresy, obrazy itd, warto opakowywać w `figure`, dzięki czemu można dodać Caption\Opis do figury, jak i `label` dzięki któremu później można odwoływać się do figur np. ``
+	\begin{figure}[H]
+		\centering
+		\label{fig:enter-label}
+		%Tworzę "pojemnik" na wykres `pgfplots` tak żeby automatycznie wyskalował mi wygenerowany wykres na szerokość strony. 
+		\noindent\resizebox{\textwidth}{!}{
+			\begin{tikzpicture}
+				\begin{axis}[%
+					name=plotA, anchor=left of south west,
+					title={Heap Sort}, 
+					xlabel={Rozmiar instancji}, ylabel={Czas(s)}, 
+					legend pos=north west,
+					xmode = log, log basis x={2},
+					every axis plot post/.style={very thick},
+					/tikz/plot label/.style={black, anchor=west}
+					]
+					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {heap_sort_a_shaped_array.txt};
+					\addplot[color=blue, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {heap_sort_constant_array.txt};
+					\addplot[green, dotted, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {heap_sort_decreasing_array.txt};
+					\addplot[black, dotted, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {heap_sort_increasing_array.txt};
+					\addplot[yellow, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {heap_sort_random_array.txt};
+					\legend{A Shaped,Constant,Decreasing,Increasing,Random}
+				\end{axis}
+				\begin{axis}[%
+					title={Insertion Sort}, 
+					name=plotB, at=(plotA.right of south east), 
+					anchor=left of south west,
+					xlabel={Rozmiar instancji}, ylabel={Czas(s)}, 
+					legend pos=north west,
+					xmode = log, log basis x={2}, %Ustawiam oś x na logarytmiczną (log2)
+					every axis plot post/.style={very thick},
+					/tikz/plot label/.style={black, anchor=west}
+					]
+					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {insertion_sort_a_shaped_array.txt};
+					\addplot[color=blue, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {insertion_sort_constant_array.txt};
+					\addplot[green, dotted, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {insertion_sort_decreasing_array.txt};
+					\addplot[black, dotted, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {insertion_sort_increasing_array.txt};
+					\addplot[yellow, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {insertion_sort_random_array.txt};
+					\legend{A Shaped,Constant,Decreasing,Increasing,Random}
+				\end{axis}
+				\begin{axis}[%
+					title={Quick Sort Left Pivot}, 
+					name=plotD, at=(plotB.below south west), 
+					anchor=above north west,
+					xlabel={Rozmiar instancji}, ylabel={Czas(s)}, 
+					legend pos=north west,
+					xmode = log, log basis x={2},
+					every axis plot post/.style={very thick},
+					/tikz/plot label/.style={black, anchor=west}
+					]
+					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {quick_sort_left_pivot_a_shaped_array.txt};
+					\addplot[color=blue, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {quick_sort_left_pivot_constant_array.txt};
+					\addplot[green, dotted, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {quick_sort_left_pivot_decreasing_array.txt};
+					\addplot[black, dotted, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {quick_sort_left_pivot_increasing_array.txt};
+					\addplot[yellow, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {quick_sort_left_pivot_random_array.txt};
+					\legend{A Shaped,Constant,Decreasing,Increasing,Random}
+				\end{axis}
+				\begin{axis}[%
+					title={Quick Sort Random Pivot},
+					name=plotC, at=(plotD.left of south west), 
+					anchor=right of south east,
+					xlabel={Rozmiar instancji}, ylabel={Czas(s)}, 
+					legend pos=north west,
+					xmode = log, log basis x={2},
+					every axis plot post/.style={very thick},
+					/tikz/plot label/.style={black, anchor=west}
+					]
+					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {quick_sort_random_pivot_a_shaped_array.txt};
+					\addplot[color=blue, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {quick_sort_random_pivot_constant_array.txt};
+					\addplot[green, dotted, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {quick_sort_random_pivot_decreasing_array.txt};
+					\addplot[black, dotted, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {quick_sort_random_pivot_increasing_array.txt};
+					\addplot[yellow, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {quick_sort_random_pivot_random_array.txt};
+					\legend{A Shaped,Constant,Decreasing,Increasing,Random}
+				\end{axis}
+				\begin{axis}[
+					title={Selection Sort},
+					title style={yshift=5pt},
+					name=plotE, at=(plotD.below south west),
+					%yshift=-0.8cm,
+					%xshift=2.1cm,
+					anchor=above north west,
+					%	yticklabel style={xshift=-1cm},
+					xlabel={Rozmiar instancji}, ylabel={Czas(s)},
+					xmode = log, log basis x={2},
+					every axis plot post/.style={very thick},
+					/tikz/plot label/.style={black, anchor=north}
+					]
+					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {selection_sort_a_shaped_array.txt};
+					\addplot[color=blue, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {selection_sort_constant_array.txt};
+					\addplot[green, dotted, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {selection_sort_decreasing_array.txt};
+					\addplot[black, dotted, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {selection_sort_increasing_array.txt};
+					\addplot[yellow, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {selection_sort_random_array.txt};
+					\legend{A Shaped,Constant,Decreasing,Increasing,Random}
+				\end{axis}
+				\begin{axis}[
+					title={Shell Sort Sedgewick},
+					title style={yshift=5pt},
+					name=plotF, at=(plotE.left of south west),
+					%yshift=-0.8cm,
+					%xshift=2.1cm,
+					anchor=right of south east,
+					%	yticklabel style={xshift=-1cm},
+					xlabel={Rozmiar instancji}, ylabel={Czas(s)},
+					xmode = log, log basis x={2},
+					every axis plot post/.style={very thick},
+					/tikz/plot label/.style={black, anchor=north}
+					]
+					\addplot[red, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {shell_sort_sedgewick_a_shaped_array.txt};
+					\addplot[color=blue, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {shell_sort_sedgewick_constant_array.txt};
+					\addplot[green, dotted, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {shell_sort_sedgewick_decreasing_array.txt};
+					\addplot[black, dotted, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {shell_sort_sedgewick_increasing_array.txt};
+					\addplot[yellow, dashed, smooth] table[x=InputSize,y=Time,meta=Algorithm,col sep=comma] {shell_sort_sedgewick_random_array.txt};
+					\legend{A Shaped,Constant,Decreasing,Increasing,Random}
 				\end{axis}
 			\end{tikzpicture}
 		}
