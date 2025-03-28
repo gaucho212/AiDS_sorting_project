@@ -68,7 +68,7 @@ def heap_sort(data):
 # Quick Sort Lewy
 def quick_sort_left(data):
     def pivot_left(arr):
-        return arr[0]
+        return 0
 
     return quick_sort(data, pivot_left)
 
@@ -85,8 +85,11 @@ def quick_sort_random(data):
 def quick_sort(data, pivot_f):
     arr = data.copy()
 
-    def partition(low, high, pivot_f):
-        pivot = pivot_f(arr)
+    def partition(low, high):
+
+        pivot_index = pivot_f(arr[low : high + 1])
+        pivot = arr[low + pivot_index]
+        arr[low], arr[low + pivot_index] = arr[low + pivot_index], arr[low]
         i = low + 1
         j = high
         while True:
@@ -103,7 +106,7 @@ def quick_sort(data, pivot_f):
 
     def quicksort(low, high):
         if low < high:
-            pivot_idx = partition(low, high, pivot_f)
+            pivot_idx = partition(low, high)
             quicksort(low, pivot_idx - 1)
             quicksort(pivot_idx + 1, high)
 
@@ -117,14 +120,12 @@ def insertion_sort(data):
     for i in range(1, len(arr)):
         j = i
         while j > 0 and arr[j - 1] > arr[j]:
-            arr[j], arr[j - 1] = arr[j - 1], arr[j]  # Zamiana bez zmiennej pomocniczej
+            arr[j], arr[j - 1] = arr[j - 1], arr[j]
             j -= 1
     return arr
 
 
 def sort_using_algorithm(data, algorithm):
-    # Ta funkcja sortuje dane za pomocą wybranego algorytmu.
-    # Jeśli algorytm jest nieznany, używa domyślnego sortowania Pythona.
     start_time = time.time()
     match algorithm:
         case 1:
