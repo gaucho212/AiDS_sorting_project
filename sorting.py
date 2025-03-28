@@ -20,12 +20,10 @@ def shell_sort_sedgewick(data):
     gaps = gaps[::-1]
     for gap in gaps:
         for i in range(gap, n):
-            temp = arr[i]
             j = i
-            while j >= gap and arr[j - gap] > temp:
-                arr[j] = arr[j - gap]
+            while j >= gap and arr[j - gap] > arr[j]:
+                arr[j], arr[j - gap] = arr[j - gap], arr[j]
                 j -= gap
-            arr[j] = temp
     return arr
 
 
@@ -67,12 +65,28 @@ def heap_sort(data):
     return arr
 
 
-# Quick Sort z pivotem skrajnie lewym
-def quick_sort_left_pivot(data):
+# Quick Sort Lewy
+def quick_sort_left(data):
+    def pivot_left(arr):
+        return arr[0]
+
+    return quick_sort(data, pivot_left)
+
+
+# Quick Sort Random
+def quick_sort_random(data):
+    def random_pivot(arr):
+        return random.randint(0, len(arr) - 1)
+
+    return quick_sort(data, random_pivot)
+
+
+# Quick Sort
+def quick_sort(data, pivot_f):
     arr = data.copy()
-    
-    def partition(low, high):
-        pivot = arr[low]
+
+    def partition(low, high, pivot_f):
+        pivot = pivot_f(arr)
         i = low + 1
         j = high
         while True:
@@ -89,7 +103,7 @@ def quick_sort_left_pivot(data):
 
     def quicksort(low, high):
         if low < high:
-            pivot_idx = partition(low, high)
+            pivot_idx = partition(low, high, pivot_f)
             quicksort(low, pivot_idx - 1)
             quicksort(pivot_idx + 1, high)
 
@@ -97,47 +111,14 @@ def quick_sort_left_pivot(data):
     return arr
 
 
-# Quick Sort z pivotem losowym
-def quick_sort_random_pivot(data):
-    arr = data.copy()
-
-    def partition(low, high):
-        pivot_idx = random.randint(low, high)
-        arr[pivot_idx], arr[low] = arr[low], arr[pivot_idx]
-        pivot = arr[low]
-        i = low + 1
-        j = high
-        while True:
-            while i <= j and arr[i] <= pivot:
-                i += 1
-            while i <= j and arr[j] >= pivot:
-                j -= 1
-            if i <= j:
-                arr[i], arr[j] = arr[j], arr[i]
-            else:
-                break
-        arr[low], arr[j] = arr[j], arr[low]
-        return j
-
-    def quicksort(low, high):
-        if low < high:
-            pivot_idx = partition(low, high)
-            quicksort(low, pivot_idx - 1)
-            quicksort(pivot_idx + 1, high)
-
-    quicksort(0, len(arr) - 1)
-    return arr
-
-
+# Insertion Sort
 def insertion_sort(data):
     arr = data.copy()
     for i in range(1, len(arr)):
-        key = arr[i]
-        j = i - 1
-        while j >= 0 and arr[j] > key:
-            arr[j + 1] = arr[j]
+        j = i
+        while j > 0 and arr[j - 1] > arr[j]:
+            arr[j], arr[j - 1] = arr[j - 1], arr[j]  # Zamiana bez zmiennej pomocniczej
             j -= 1
-        arr[j + 1] = key
     return arr
 
 
@@ -155,9 +136,9 @@ def sort_using_algorithm(data, algorithm):
         case 4:
             sorted_data = heap_sort(data)  # Heap Sort
         case 5:
-            sorted_data = quick_sort_left_pivot(data)  # Quick Sort (lewy pivot)
+            sorted_data = quick_sort_left(data)  # Quick Sort (lewy pivot)
         case 6:
-            sorted_data = quick_sort_random_pivot(data)  # Quick Sort (losowy pivot)
+            sorted_data = quick_sort_random(data)  # Quick Sort (losowy pivot)
         case _:
             print(f"Unknown algorithm: {algorithm}. Using default.")
             sorted_data = sorted(data)
@@ -174,7 +155,7 @@ def main():
         "Menu Algorytmów sorotwania\n 1.Insertion Sort \n 2.Shell Sort \n 3.Selection Sort \n 4.Heap Sort \n 5.Quick Sort Left Pivot \n 6.Quick Sort Random Pivot\n"
     )
     algorithm_number = int(input("Podaj numer sortowania: "))
-    
+
     print("Podaj dane do posortowania:")
     # Wczytuje dane wejściowe
     input_data = sys.stdin.read().split()
