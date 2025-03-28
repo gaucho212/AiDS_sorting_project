@@ -174,7 +174,8 @@ def main():
         "Menu Algorytmów sorotwania\n 1.Insertion Sort \n 2.Shell Sort \n 3.Selection Sort \n 4.Heap Sort \n 5.Quick Sort Left Pivot \n 6.Quick Sort Random Pivot\n"
     )
     algorithm_number = int(input("Podaj numer sortowania: "))
-
+    
+    print("Podaj dane do posortowania:")
     # Wczytuje dane wejściowe
     input_data = sys.stdin.read().split()
     try:
