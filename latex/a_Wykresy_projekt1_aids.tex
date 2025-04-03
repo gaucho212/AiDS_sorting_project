@@ -1,18 +1,72 @@
-
 \documentclass{article}
-%Tworzenie wykresów bezpośrednio w LaTeXu
-\usepackage{pgfplots}
-%Pozwala dodać opcję H dlo figur, dzięki czemu mamy absolutną kontrolę gdzie się mają pojawić
-\usepackage{float}
-%Ustawianie marginesu 1 cal lub 0.5 cala to najlepsza opcja. Standardowe 1.5 cala nadaje się dla książek ale dla sprawozdań już mniej
-\usepackage[margin=1in]{geometry}
-\pgfplotsset{
-	width=8cm, height=7cm, ymin=0, xmin=2047, xmax=32768, grid=both, %wymiary osi
-	xticklabel style={rotate=45, anchor=near xticklabel},  %liczby na osi X pod kątem 45*
-	x label style={at={(axis description cs:0.5,-0.03)}}, %legenda osi X wyśrodkowana, lekko obniżona
-	y label style={at={(axis description cs:-0.1,0.4)}}
-}
+
+\newcommand\reportsubject  {Laboratoria Algorytmów i Struktur Danych}
+\newcommand\reporttitle    {Algorytmy Sortujące}
+\newcommand\reportsubtitle {Sprawozdanie nr 1}
+\newcommand\grouptutor     {Dominik Piotr Witczak}
+\newcommand\teamduo		   {Marcin Jakubowski(164108), Adam Woźiński(164119)}
+\input{Preamble} % Loads in the preamble 
+\input{Settings} % Loads in the preamble 
+
 \begin{document}
+
+\begin{titlepage}
+	
+	\begin{tikzpicture}[remember picture,overlay]
+		% Default apex angle 30 degrees
+		\node(left-triagle)[isosceles triangle,
+		isosceles triangle apex angle=90,
+		fill=Light-Gray,
+		minimum size =0.6\textheight] (T.west) at (current page.north west){};
+		
+		\node(bottom-triagle)[isosceles triangle, name=bottomtriangle,
+		isosceles triangle apex angle=90, rotate=90,
+		fill=Light-Gray,
+		minimum height=40.05cm] () at ([xshift=-9cm]current page.south east){};
+		
+		\node(bottom-rectangle)[rectangle,
+		fill=Light-Gray, minimum height=47cm, minimum width=18cm] () at (current page.south east)
+		{};
+		
+		\node[inner sep=0pt] (logo) at ([xshift=2.5cm, yshift=-2.5cm]current page.north west)
+		{\includegraphics[width= 0.25\textwidth]{Figures/PP-PUT-LOGO.png}};
+		
+		\node[text width = 0.8\textwidth](subject) at (16,-4){\sffamily\Large \reportsubject};
+		\node[text width = 0.8\textwidth, yshift = 0.75cm, xshift= -1.15cm, below = of subject](subtitle){\textcolor{PUT-Blue}{\sffamily\Large \reportsubtitle}};
+		\node[text width = 0.8\textwidth, yshift = 0.75cm, xshift= -1.15cm, below = of subtitle](title) {\textcolor{PUT-Blue}{\sffamily\Huge\reporttitle}};
+		\node[text width = 0.8\textwidth, yshift = 0.75cm, xshift= -1.25cm, below = of title](tutor){\sffamily\Large Prowadzący: \putbf{\grouptutor} };
+		\node[text width = 0.8\textwidth, yshift = 0.75cm, xshift= -1.25cm, below = of tutor](names){\sffamily\normalsize Autorzy: \putbf{\teamduo} };
+		
+		
+		
+		
+		\node[inner sep=0pt, anchor=west] (logo2) at ([xshift=1.2cm, yshift=2.5cm]current page.south west)
+		{\includegraphics[width= 0.6\textwidth]{Figures/PP-PUT-WORD}};
+		
+	\end{tikzpicture}
+	
+\end{titlepage}
+\newpage
+	\section{Wprowadzenie}
+	
+	Celem projektu było stworzenie programu umożliwiającego użytkownikowi testowanie i porównywanie różnych algorytmów sortujących. Program został napisany w języku Python i zawiera implementacje kilku popularnych algorytmów sortowania, takich jak:
+	
+	\begin{itemize}
+		\item \textbf{Insertion Sort} – sortowanie przez wstawianie,
+		\item \textbf{Shell Sort} – sortowanie z przyrostami Sedgewicka,
+		\item \textbf{Selection Sort} – sortowanie przez wybieranie,
+		\item \textbf{Heap Sort} – sortowanie kopcowe,
+		\item \textbf{Quick Sort} – sortowanie szybkie z różnymi strategiami wyboru pivota (lewy pivot i losowy pivot).
+	\end{itemize}
+	
+	Każdy z algorytmów został zaimplementowany jako osobna funkcja, a ich działanie opiera się na kopiowaniu danych wejściowych, aby uniknąć modyfikacji oryginalnych danych. Program pozwala użytkownikowi wybrać jeden z dostępnych algorytmów sortowania i podać dane do posortowania w formie listy liczb.
+	
+	Dodatkowo, program mierzy czas działania wybranego algorytmu, co pozwala na ocenę jego wydajności w zależności od rozmiaru i charakterystyki danych wejściowych. W menu programu użytkownik może wybrać algorytm sortowania, a następnie wprowadzić dane ręcznie lub za pomocą standardowego wejścia.
+	
+	Projekt został zaprojektowany w sposób modularny, co ułatwia dodawanie nowych algorytmów sortowania w przyszłości. Dzięki temu użytkownik może w prosty sposób eksperymentować z różnymi metodami sortowania i analizować ich efektywność.
+\newpage
+	
+	\section{Porównywanie czasów wykonywania}
 	\section*{WYKRESY DLA DANYCH TYPU A SHAPED ARRAY }
 	%Wykresy, obrazy itd, warto opakowywać w `figure`, dzięki czemu można dodać Caption\Opis do figury, jak i `label` dzięki któremu później można odwoływać się do figur np. ``
 	\begin{figure}[H]
@@ -511,4 +565,13 @@
 			\end{tikzpicture}
 		}
 	\end{figure}
+\newpage
+	\section{Wnioski}
+	
+	Z analizy działania zaimplementowanych algorytmów sortowania wynika, że czas wykonania każdego z nich jest silnie uzależniony od charakterystyki danych wejściowych oraz rozmiaru listy. Algorytmy o złożoności kwadratowej, takie jak \textbf{Insertion Sort} czy \textbf{Selection Sort}, działają stosunkowo wolno dla dużych zbiorów danych, co czyni je nieefektywnymi w takich przypadkach. Z kolei algorytmy o złożoności \textbf{O(n log n)}, takie jak \textbf{Heap Sort} czy \textbf{Quick Sort}, wykazują znacznie lepszą wydajność, szczególnie dla dużych list.
+	
+	Warto również zauważyć, że wybór strategii wyboru pivota w \textbf{Quick Sort} ma istotny wpływ na czas działania algorytmu. W przypadku losowego wyboru pivota (\textbf{Quick Sort Random}) algorytm działa bardziej równomiernie w porównaniu do wyboru skrajnie lewego pivota (\textbf{Quick Sort Left}), który może prowadzić do nieoptymalnych podziałów w przypadku niekorzystnych danych wejściowych.
+	
+	Podsumowując, wybór odpowiedniego algorytmu sortowania powinien być uzależniony od charakterystyki danych oraz wymagań dotyczących wydajności. Algorytmy o złożoności \textbf{O(n log n)} są bardziej uniwersalne i efektywne dla dużych zbiorów danych, podczas gdy algorytmy o złożoności kwadratowej mogą być wystarczające dla małych list lub w sytuacjach, gdzie prostota implementacji jest priorytetem.
+	
 \end{document}
