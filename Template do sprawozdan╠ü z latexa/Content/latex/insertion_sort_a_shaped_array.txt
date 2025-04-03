@@ -1,0 +1,13 @@
+Algorithm,InputSize,Time
+a_shaped_array,32,0.000025
+a_shaped_array,64,0.000058
+a_shaped_array,128,0.000209
+a_shaped_array,256,0.000821
+a_shaped_array,512,0.004119
+a_shaped_array,1024,0.021364
+a_shaped_array,2048,0.083801
+a_shaped_array,4096,0.318342
+a_shaped_array,8192,1.291808
+a_shaped_array,16384,4.970632
+a_shaped_array,32768,20.240591
+
