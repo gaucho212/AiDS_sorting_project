@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1743704382.22088 "/Users/sleepyfirebird/Studia/Repozytoria/AiDS_sorting_project/latex/a_Wykresy_projekt1_aids.tex" "a_Wykresy_projekt1_aids.pdf" "a_Wykresy_projekt1_aids" 1743704389.9034 0
+["pdflatex"] 1743759444.90364 "/Users/sleepyfirebird/Studia/Repozytoria/AiDS_sorting_project/latex/a_Wykresy_projekt1_aids.tex" "a_Wykresy_projekt1_aids.pdf" "a_Wykresy_projekt1_aids" 1743759452.22545 0
   "/Users/sleepyfirebird/Studia/Repozytoria/AiDS_sorting_project/latex/a_Wykresy_projekt1_aids.tex" 1743704263.48695 29235 8c5092497455e5b3a65c48950ec1a1a6 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -253,10 +253,10 @@
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
   "Figures/PP-PUT-LOGO.png" 1743703495.04263 53173 344340f366171055dafe95452cec39c1 ""
   "Figures/PP-PUT-WORD.png" 1743703495.0464 67341 d5c9c285f65c537cad2ddbd745acecf6 ""
-  "Preamble.tex" 1743704374.43865 3256 a3bc9e8e930ff6db3e4c211233f8a61a ""
+  "Preamble.tex" 1743759444.644 3368 703ac2f1efc7701f13969c1160f7c49a ""
   "Settings.tex" 1743703495.1224 1387 5cf7ceb4e890d925f0ac0b3b6081ecf4 ""
-  "a_Wykresy_projekt1_aids.aux" 1743704389.5716 767 67487f002de3fa815c21cc946655319d "pdflatex"
-  "a_Wykresy_projekt1_aids.out" 1743704389.57309 391 c53a2c1155913850b43bf8e669ad6d18 "pdflatex"
+  "a_Wykresy_projekt1_aids.aux" 1743759451.93561 767 67487f002de3fa815c21cc946655319d "pdflatex"
+  "a_Wykresy_projekt1_aids.out" 1743759451.93715 391 c53a2c1155913850b43bf8e669ad6d18 "pdflatex"
   "a_Wykresy_projekt1_aids.tex" 1743704263.48695 29235 8c5092497455e5b3a65c48950ec1a1a6 ""
   "heap_sort_a_shaped_array.txt" 1742080754.79062 340 08cd69a344aeaf394f1eca0e329b7861 ""
   "heap_sort_constant_array.txt" 1742080754.79084 340 cac45e06d76b32b83e93d61cedd8fcd4 ""

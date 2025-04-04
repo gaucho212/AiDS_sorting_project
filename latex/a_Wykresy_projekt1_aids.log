@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.4.3)  3 APR 2025 20:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.4.3)  4 APR 2025 11:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1045,7 +1045,7 @@ PGFPlots: reading {shell_sort_sedgewick_random_array.txt}
 [7]
 
 [8]
-runsystem(latexminted cleantemp  --timestamp 20250403201942 14EBFDA913BE45C2BEEBB6D40D85E0AE)...executed safely (allowed).
+runsystem(latexminted cleantemp  --timestamp 20250404113725 14EBFDA913BE45C2BEEBB6D40D85E0AE)...executed safely (allowed).
 
  (./a_Wykresy_projekt1_aids.aux)
  ***********
