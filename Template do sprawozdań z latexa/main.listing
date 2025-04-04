@@ -1,6 +1,0 @@
->>> more plik.txt
-7
-2 5 10 12 13 6 9
-Print
-Exit
->>>  ./program --tree AVL < plik.txt
